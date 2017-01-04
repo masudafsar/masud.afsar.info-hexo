@@ -1,0 +1,247 @@
+// mixins
+
+//-- box-sizing
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}
+
+//-- border-radius
+@mixin border-radius($r1, $r2: $r1, $r3: $r1, $r4: $r1) {
+    -webkit-border-radius: $r1 $r2 $r3 $r4;
+    border-radius: $r1 $r2 $r3 $r4;
+}
+
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+//-- box-shadow
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+//-- text-shadow
+@mixin text-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+    text-shadow: $shadow;
+}
+
+//-- transition
+@mixin transition($transition: 400ms all ease) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transition-property($property) {
+    -webkit-transition-property: $property;
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    transition-property: $property;
+}
+
+@mixin transition-delay($delay) {
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin transition-duration($duration) {
+    -webkit-transition-duration: $duration;
+    -moz-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    transition-duration: $duration;
+}
+
+@mixin transition-function($function) {
+    -webkit-transition-timing-function: $function;
+    -moz-transition-timing-function: $function;
+    -o-transition-timing-function: $function;
+    transition-timing-function: $function;
+}
+
+@mixin transition-transform($transition) {
+    -webkit-transition: -webkit-transform $transition;
+    -moz-transition: -moz-transform $transition;
+    -o-transition: -o-transform $transition;
+    transition: transform $transition;
+}
+
+//-- transform
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    transform: $transform;
+}
+
+//-- opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: ($opacity * 100);
+    filter: #{alpha(opacity=$opacity-ie)};
+}
+
+//-- placeholder
+@mixin placeholder($color: $gray-dark) {
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+}
+
+//-- clearfix
+@mixin clearfix {
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//-- media queries
+@mixin MQ($canvas) {
+    @if $canvas == lg {
+        @media only screen and (min-width: $lg) { @content; }
+    } @else if $canvas == md {
+        @media only screen and (min-width: $md) { @content; }
+    } @else if $canvas == sm {
+        @media only screen and (min-width: $sm) { @content; }
+    } @else if $canvas == xs {
+        @media only screen and (max-width: $sm - 1) { @content; }
+    } @else if $canvas != nil {
+        @media only screen and (min-width: $canvas) { @content; }
+    } @else {
+        @content;
+    }
+}
+
+//-- antialiasing mode font rendering
+@mixin font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+//-- center vertically and/or horizontally an absolute positioned element
+@mixin center($xy:xy) {
+    @if $xy == xy {
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        @include transform(translateX(-50%) translateY(-50%));
+    }
+    @else if $xy == x {
+        left: 50%;
+        right: auto;
+        @include transform(translateX(-50%));
+    }
+    @else if $xy == y {
+        top: 50%;
+        bottom: auto;
+        @include transform(translateY(-50%));
+    }
+}
+
+@mixin fa($icon:'') {
+    &:before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: $icon;
+    }
+}
+
+@mixin placeholder() {
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin bs-form-control {
+    display: block;
+    width: 100%;
+    height: $input-height-base;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $input-color;
+    background-color: $input-bg;
+    background-image: none;
+    border: 1px solid $input-border;
+    border-radius: $input-border-radius;
+
+    &::-ms-expand {
+        border: 0;
+        background-color: transparent;
+    }
+
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: $input-bg-disabled;
+        opacity: 1;
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+    }
+}
+
+@mixin bs-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}

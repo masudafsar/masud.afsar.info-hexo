@@ -1,0 +1,77 @@
+body {
+    background-color: $gray-light;
+    font-family: $fonts;
+}
+
+h1 {
+    font-family: $fonts;
+    font-weight: 700;
+}
+
+h2 {
+    @extend h1;
+}
+
+h3 {
+    @extend h1;
+}
+
+h4 {
+    @extend h1;
+}
+
+h5 {
+    @extend h1;
+}
+
+h6 {
+    @extend h1;
+}
+
+.h1 {
+    @extend h1;
+}
+
+.h2 {
+    @extend h1;
+}
+
+.h3 {
+    @extend h1;
+}
+
+.h4 {
+    @extend h1;
+}
+
+.h5 {
+    @extend h1;
+}
+
+.h6 {
+    @extend h1;
+}
+
+.tooltip {
+    font-family: $fonts;
+}
+
+.popover {
+    font-family: $fonts;
+}
+
+* {
+    &::selection {
+        background-color: $brand-danger;
+        color: $gray-lighter;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto !important;
+}
+
+.required {
+    color: $brand-danger;
+}

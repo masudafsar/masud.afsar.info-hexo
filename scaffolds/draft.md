@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
-icon:
-thumb:
+icon: pencil
+has_thumb: false
 date: {{ date }}
 tags:
 categories:

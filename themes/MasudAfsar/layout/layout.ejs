@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="<%- config.language %>" class="no-js">
+<%- partial('partial/site-head') %>
+<body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+<!-- #main-container -->
+<div id="main-container">
+    <%- partial('partial/page-header') %>
+
+    <!-- #wraper -->
+    <div id="wraper" class="container">
+        <div class="row">
+            <%- body %>
+        </div>
+    </div>
+    <!--/#wraper -->
+
+    <%- partial('partial/page-footer') %>
+</div>
+<!--/#main-container -->
+
+<%- partial('partial/site-foot') %>
+</body>
+</html>

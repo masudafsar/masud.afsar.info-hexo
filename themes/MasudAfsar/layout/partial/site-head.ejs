@@ -1,0 +1,62 @@
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <meta itemprop="name" content="<%- __(config.title) %>"/>
+    <meta itemprop="url" content="<%- __(config.url) %>"/>
+    <meta itemprop="creator" content="<%- __(config.author) %>"/>
+
+    <%
+    var title = page.title;
+
+    if (is_archive()) {
+        title = __('Archive');
+
+        if (is_month()) {
+            title += ': ' + page.year + '/' + page.month;
+        } else if (is_year()) {
+            title += ': ' + page.year;
+        }
+    } else if (is_category()) {
+        title = __('Category') + ': ' + page.category;
+    } else if (is_tag()) {
+        title = __('Tag') + ': ' + page.tag;
+    }
+    %>
+    <title>
+        <% if (title){ %>
+        <%= title %> |
+        <% } %>
+        <%= config.title %>
+    </title>
+
+    <%-
+    open_graph({
+        twitter_id: theme.twitter,
+        google_plus: theme.google_plus,
+        fb_admins: theme.fb_admins,
+        fb_app_id: theme.fb_app_id
+    })
+    %>
+    <% if (theme.rss){ %>
+    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <% } %>
+    <% if (theme.favicon){ %>
+    <link rel="shortcut icon" href="<%- theme.favicon %>">
+    <% } %>
+    <% if (config.highlight.enable){ %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+    <% } %>
+
+    <!-- Page styles -->
+    <%- css('css/bootstrap') %>
+    <%- css('css/style') %>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>

@@ -1,0 +1,46 @@
+<%
+if (is_archive()) {
+    var arcTitle = "";
+    if (is_month()) {
+        arcTitle = page.year + '/' + page.month
+    } else if (is_year()) {
+        arcTitle = page.year
+    }
+%>
+<%-
+    partial('partial/sections/archive-header', {
+        archiveType: __('Archive'),
+        archiveTitle: arcTitle
+    })
+%>
+<% } else if (is_category()) { %>
+<%-
+    partial('partial/sections/archive-header', {
+        archiveType: __('Category'),
+        archiveTitle: page.category
+    })
+%>
+<% } else if (is_tag()) { %>
+<%-
+    partial('partial/sections/archive-header', {
+        archiveType: __('Tag'),
+        archiveTitle: page.tag
+    })
+%>
+<% } %>
+<% if (page.posts!==undefined && page.posts.length != 0) { %>
+<!-- .section-articles -->
+<section class="section-articles">
+    <% page.posts.each (function (post, i) { %>
+    <%- partial('partial/post-archive', {post: post, i: i}) %>
+    <% }) %>
+</section>
+<!--/.section-articles -->
+<% } else { %>
+<%-
+    partial('partial/sections/archive-header', {
+        archiveType: "",
+        archiveTitle: __("Not found any post!")
+    })
+%>
+<% } %>

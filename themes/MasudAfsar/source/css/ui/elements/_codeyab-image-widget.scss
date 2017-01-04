@@ -1,0 +1,17 @@
+.widget_codeyab_image {
+    .image_container {
+        img {
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        &.full-width {
+            margin: -20px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

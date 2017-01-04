@@ -9,7 +9,9 @@
     "url": "https://github.com/masudafsar/masudafsar.github.io.git"
   },
   "scripts": {
-    "start": "hexo server"
+    "start": "hexo server",
+    "build": "hexo generate",
+    "clean": "hexo clean"
   },
   "private": true,
   "hexo": {

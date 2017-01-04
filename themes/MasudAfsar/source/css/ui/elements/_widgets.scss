@@ -1,0 +1,260 @@
+.widget {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: $white;
+    @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+
+    .screen-reader-text {
+        @include bs-sr-only;
+    }
+
+    .widget-title {
+        padding: 15px 20px;
+        margin: -20px -20px 20px;
+        background-color: $brand-danger;
+        color: $white;
+        @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 24px;
+
+        a {
+            color: $white;
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+            color: $gray-darker;
+            font-size: 14px;
+            line-height: 18px;
+
+            a {
+                padding: 5px 10px;
+                display: inline-block;
+                color: $gray-darker;
+
+                &:hover {
+                    background-color: $gray-light;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        ul {
+            padding-right: 10px;
+            margin-right: 10px;
+            border-right: 3px solid $gray;
+        }
+    }
+
+    &.widget_search {
+        background-color: $gray-lighter;
+    }
+
+    &.widget_meta {}
+
+    &.widget_links {}
+
+    &.widget_archive {
+        select {
+            @include bs-form-control;
+        }
+    }
+
+    &.widget_ztjalali_archive {
+        @extend .widget_archive;
+    }
+
+    &.widget_recent_entries {
+        .post-date {
+            font-size: 10px;
+            color: $gray-dark;
+        }
+    }
+
+    &.widget_categories {
+        @extend .widget_archive;
+    }
+
+    &.widget_recent_comments {
+        li {
+            padding: 5px 10px;
+
+            a {
+                color: $brand-danger;
+
+                &:hover {
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &.widget_text {
+        p {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    &.widget_tag_cloud {
+        .tagcloud {
+            a {
+                padding: 2px 28px 2px 8px;
+                margin: 4px 0px;
+                background-color: $gray-lighter;
+                color: $gray-base;
+                font-size: 12px;
+                line-height: 20px;
+                display: inline-block;
+                position: relative;
+                @include border-radius(18px);
+                @include transition;
+
+                &:after {
+                    width: 24px;
+                    height: 24px;
+                    background-color: $gray-lighter;
+                    border: 8px solid $gray-light;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    content: ' ';
+                    @include border-radius(50%);
+                    @include transition;
+                }
+
+                &:hover {
+                    background-color: $gray-light;
+                    text-decoration: none;
+                    @include box-shadow(0 2px 5px rgba($gray-base, 0.3));
+
+                    &:after {
+                        background-color: $gray-light;
+                        border-color: $brand-danger;
+                    }
+                }
+
+                &:focus {
+                    background-color: $gray-light;
+                    text-decoration: none;
+                    @include box-shadow(0 2px 5px rgba($gray-base, 0.3));
+
+                    &:after {
+                        background-color: $gray-light;
+                        border-color: $brand-danger;
+                    }
+                }
+            }
+        }
+    }
+
+    &.widget_calendar {
+        table {
+            width: 100%;
+            font-size: 14px;
+            line-height: 26px;
+            text-align: center;
+
+            caption {
+                color: $gray-darker;
+                text-align: center;
+            }
+
+            tbody {
+                border: 1px solid $gray-light;
+            }
+
+            td {
+                border: 1px solid $gray-light;
+                border-collapse: collapse;
+            }
+
+            th {
+                background-color: $gray-darker;
+                color: $white;
+                border: 1px solid $gray-darker;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            a {
+                background-color: $brand-danger;
+                color: $white;
+                display: block;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: $brand-danger2;
+                }
+            }
+        }
+    }
+
+    &.widget_ztjalali_calendar {
+        @extend .widget_calendar;
+    }
+
+    &.widget_pages {}
+
+    &.widget_rss {
+        ul {
+            li {
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .rsswidget {
+                padding: 0;
+                background-color: transparent;
+                color: $brand-danger;
+                display: block;
+                font-size: 16px;
+                line-height: 24px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .rss-date {
+                margin: 5px 0;
+                color: $gray;
+                display: block;
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            .rssSummary {
+                margin: 5px 0;
+                color: $gray-darker;
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            cite {
+                color: $gray;
+                display: block;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+@import "codeyab-image-widget.scss";
+@import "codeyab-about-widget.scss";
