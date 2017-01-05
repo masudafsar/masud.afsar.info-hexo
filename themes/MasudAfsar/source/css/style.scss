@@ -1,0 +1,24 @@
+/* 
+    Created on : Jul 6, 2016, 9:21:21 PM
+    Author     : Masud Afsar
+    version    : v0.3.1
+*/
+
+@charset "utf-8";
+
+@import "bootstrap/flatly/variables.scss";
+@import "bootstrap/bootstrap/mixins.scss";
+@import "inc/mixin.scss";
+
+@import "inc/_adv-hr.scss";
+
+// font-awesome
+@import "font-awesome/font-awesome.scss";
+
+// IRANSans font
+@import "inc/IRANSans.scss";
+
+@import "ui/variables";
+@import "ui/generals";
+
+@import "ui/main-container.scss";

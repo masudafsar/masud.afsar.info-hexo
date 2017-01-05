@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: Masud Afsar
+subtitle: Game and Web Developer
+description: Masud Afsar's personal website.
+author: Masud Afsar
+language: fa
+timezone: Asia/Tehran
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://masud.afsar.info
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -20,9 +20,9 @@ permalink_defaults:
 # Directory
 source_dir: source
 public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
+tag_dir: tag
+archive_dir: blog
+category_dir: topic
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -63,9 +63,42 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: MasudAfsar
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:masudafsar/masudafsar.github.io.git
+  branch: master
+
+sitemap:
+  path: sitemap.xml
+
+nofollow:
+  enable: true
+  exclude:
+  - afsar.info
+  - codeyab.com
+
+html_minifier:
+  enable: true
+  exclude:
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+image_minifier:
+  enable: false
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false

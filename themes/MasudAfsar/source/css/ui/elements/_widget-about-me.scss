@@ -1,0 +1,135 @@
+.widget-about-me {
+    padding: 0;
+    background-color: transparent;
+    @include box-shadow(none);
+
+    .logo {
+        width: 156px;
+        height: 156px;
+        margin: 0 auto 15px;
+        background: $white;
+        border: 3px solid $gray-lighter;
+        @include border-radius(50%);
+        @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+        overflow: hidden;
+
+        img {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+
+    .about-content {
+        p {
+            margin-bottom: 0;
+        }
+
+        a {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+
+    .widget-body {
+        padding: 20px;
+        //margin: 20px 0;
+        background-color: $white;
+        @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+    }
+
+    .normal {}
+    .normal-notitle {}
+    .modern {
+        margin-top: 95px;
+
+        .about-header {
+            height: 1px;
+            margin-bottom: 70px;
+            position: relative;
+
+            .logo {
+                margin-left: -75px;
+                position: absolute;
+                top: -95px;
+                left: 50%;
+                right: auto;
+            }
+        }
+    }
+    .modern-boxed {
+        .about-header {
+            height: 100px;
+            padding-top: 25px;
+            margin: -20px -20px 90px;
+            background: $brand-danger;
+            @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+
+            .logo {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .about-social-links {
+        margin-top: 15px;
+        text-align: center;
+
+        .link {
+            width: 40px;
+            height: 40px;
+            margin: 0 2px;
+            display: inline-block;
+            color: $white;
+            background-color: $gray-darker;
+            @include border-radius(20px);
+            text-align: center;
+            line-height: 40px;
+            @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+
+            &:hover {
+                background-color: darken($gray-darker, 10%);
+            }
+
+            i {
+                line-height: 40px;
+            }
+        }
+
+        .github {
+            background-color: $github-color;
+
+            &:hover {
+                background-color: darken($github-color, 10%);
+            }
+        }
+        .facebook {
+            background-color: $facebook-color;
+
+            &:hover {
+                background-color: darken($facebook-color, 10%);
+            }
+        }
+        .twitter {
+            background-color: $twitter-color;
+
+            &:hover {
+                background-color: darken($twitter-color, 10%);
+            }
+        }
+        .googleplus {
+            background-color: $gplus-color;
+
+            &:hover {
+                background-color: darken($gplus-color, 10%);
+            }
+        }
+        .telegram {
+            background-color: $telegram-color;
+
+            &:hover {
+                background-color: darken($telegram-color, 10%);
+            }
+        }
+
+    }
+}
