@@ -1,0 +1,24 @@
+<section class="section-articles">
+
+    <article class="page-single"
+             id="page-<%- page._id %>"
+             itemscope="itemscope"
+             itemtype="http://schema.org/BlogPosting"
+             itemprop="blogPost">
+
+        <header class="page-header">
+            <h3 class="page-title" itemprop="headline">
+                <span class="page-icon">
+                    <i class="fa fa-<%- page.icon === undefined ? 'file-text-o' : page.icon %>"></i>
+                </span>
+                <%= page.title %>&nbsp;
+            </h3>
+        </header>
+
+        <div class="page-body" itemprop="text">
+            <%- page.content %>
+        </div>
+
+    </article>
+
+</section>

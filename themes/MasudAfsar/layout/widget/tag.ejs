@@ -3,7 +3,7 @@
     <h3 class="widget-title"><%= __('Tags') %></h3>
     <div class="tagcloud">
         <% site.tags.forEach(function (tag) { %>
-        <a href="<%= tag.path %>" class="" title="<%= tag.name %>"><%= tag.name %></a>
+        <a href="/<%= tag.path %>" class="" title="<%= tag.name %>"><%= tag.name %></a>
         <% }) %>
     </div>
 </aside>
