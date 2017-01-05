@@ -20,9 +20,9 @@ permalink_defaults:
 # Directory
 source_dir: source
 public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
+tag_dir: tag
+archive_dir: blog
+category_dir: topic
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -74,3 +74,31 @@ deploy:
 
 sitemap:
   path: sitemap.xml
+
+nofollow:
+  enable: true
+  exclude:
+  - afsar.info
+  - codeyab.com
+
+html_minifier:
+  enable: true
+  exclude:
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+image_minifier:
+  enable: false
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false

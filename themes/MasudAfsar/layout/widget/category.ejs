@@ -1,0 +1,12 @@
+<% if (site.categories.length){ %>
+<aside id="wiget-categories" class="widget widget_categories">
+    <h3 class="widget-title"><%= __('Categories') %></h3>
+    <ul>
+        <% site.categories.forEach(function (category) { %>
+        <li class="cat-item">
+            <a href="<%= category.path %>" title="<%= category.name %>"><%= category.name %></a>
+        </li>
+        <% }) %>
+    </ul>
+</aside>
+<% } %>
