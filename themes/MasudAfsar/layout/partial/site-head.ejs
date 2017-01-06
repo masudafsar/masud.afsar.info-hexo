@@ -39,6 +39,9 @@
         fb_app_id: theme.fb_app_id
     })
     %>
+    <% if (config.google_site_verification !== undefined){ %>
+    <meta name="google-site-verification" content="<%- config.google_site_verification %>" />
+    <% } %>
     <% if (theme.rss){ %>
     <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
     <% } %>

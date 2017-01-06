@@ -9,6 +9,8 @@ description: Masud Afsar's personal website.
 author: Masud Afsar
 language: fa
 timezone: Asia/Tehran
+google_analytics: UA-46915366-3
+google_site_verification: HeVv667BLqVRFLUKz7f43ryyu0kOZ0StIfMPerjbza4
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
