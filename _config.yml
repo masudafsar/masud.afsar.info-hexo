@@ -74,6 +74,12 @@ deploy:
   repo: git@github.com:masudafsar/masudafsar.github.io.git
   branch: master
 
+# Post types
+types:
+ - blog
+ - portfolio
+ - skill
+
 sitemap:
   path: sitemap.xml
 

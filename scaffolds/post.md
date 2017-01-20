@@ -5,4 +5,5 @@ has_thumb: false
 date: {{ date }}
 tags:
 categories:
+layout: blog
 ---
