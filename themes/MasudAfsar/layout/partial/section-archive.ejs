@@ -28,10 +28,11 @@ if (is_archive()) {
     })
 %>
 <% } %>
-<% if (page.posts!==undefined && page.posts.length != 0) { %>
+<% if (page.posts !== undefined && page.posts.length != 0) { %>
 <!-- .section-articles -->
 <section class="section-articles">
     <% page.posts.each (function (post, i) { %>
+    
     <%- partial('partial/post-archive', {post: post, i: i}) %>
     <% }) %>
 </section>
