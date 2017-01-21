@@ -8,21 +8,21 @@ if (is_archive()) {
     }
 %>
 <%-
-    partial('partial/sections/archive-header', {
+    partial('parts/sections/archive-header', {
         archiveType: __('Archive'),
         archiveTitle: arcTitle
     })
 %>
 <% } else if (is_category()) { %>
 <%-
-    partial('partial/sections/archive-header', {
+    partial('parts/sections/archive-header', {
         archiveType: __('Category'),
         archiveTitle: page.category
     })
 %>
 <% } else if (is_tag()) { %>
 <%-
-    partial('partial/sections/archive-header', {
+    partial('parts/sections/archive-header', {
         archiveType: __('Tag'),
         archiveTitle: page.tag
     })
@@ -33,13 +33,13 @@ if (is_archive()) {
 <section class="section-articles">
     <% page.posts.each (function (post, i) { %>
     
-    <%- partial('partial/post-archive', {post: post, i: i}) %>
+    <%- partial('parts/post-archive', {post: post, i: i}) %>
     <% }) %>
 </section>
 <!--/.section-articles -->
 <% } else { %>
 <%-
-    partial('partial/sections/archive-header', {
+    partial('parts/sections/archive-header', {
         archiveType: "",
         archiveTitle: __("Not found any post!")
     })
