@@ -74,21 +74,18 @@ deploy:
   repo: git@github.com:masudafsar/masudafsar.github.io.git
   branch: master
 
-# Post types
-types:
- - blog
- - portfolio
- - skill
-
+# hexo-generator-sitemap
 sitemap:
   path: sitemap.xml
 
+# hexo-autonofollow
 nofollow:
   enable: true
   exclude:
   - afsar.info
   - codeyab.com
 
+# hexo-all-minifier
 html_minifier:
   enable: true
   exclude:
@@ -110,3 +107,20 @@ image_minifier:
   optimizationLevel: 2
   pngquant: false
   progressive: false
+
+# hexo-generator-index3
+index_generator:
+  index:
+    per_page: 0
+    order_by: -date
+    layout:
+      - index
+    include:
+      - key type blog
+  protfolio:
+    per_page: 0
+    order_by: -date
+    layout:
+      - portfolio
+    include:
+      - key type portfolio
