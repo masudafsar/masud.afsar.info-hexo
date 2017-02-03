@@ -2,7 +2,9 @@
     padding: 20px;
     margin: 20px 0;
     background-color: $white;
-    @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+    overflow: hidden;
+    @include border-radius(4px);
+    @include md-shadow-1;
 
     .screen-reader-text {
         @include bs-sr-only;
@@ -11,12 +13,12 @@
     .widget-title {
         padding: 15px 20px;
         margin: -20px -20px 20px;
-        background-color: $brand-danger;
+        background-color: $gray-darker;
         color: $white;
-        @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
         font-size: 16px;
         font-weight: normal;
         line-height: 24px;
+        @include md-shadow-2;
 
         a {
             color: $white;
@@ -37,10 +39,13 @@
                 padding: 5px 10px;
                 display: inline-block;
                 color: $gray-darker;
+                @include border-radius(4px);
+                @include transition;
 
                 &:hover {
                     background-color: $gray-light;
                     text-decoration: none;
+                    @include md-shadow-4;
                 }
             }
         }
@@ -53,10 +58,8 @@
     }
 
     &.widget_search {
-        background-color: $gray-lighter;
+        background-color: $white;
     }
-
-    &.widget_meta {}
 
     &.widget_links {}
 
@@ -66,44 +69,8 @@
         }
     }
 
-    &.widget_ztjalali_archive {
-        @extend .widget_archive;
-    }
-
-    &.widget_recent_entries {
-        .post-date {
-            font-size: 10px;
-            color: $gray-dark;
-        }
-    }
-
     &.widget_categories {
         @extend .widget_archive;
-    }
-
-    &.widget_recent_comments {
-        li {
-            padding: 5px 10px;
-
-            a {
-                color: $brand-danger;
-
-                &:hover {
-                    background-color: transparent;
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
-
-    &.widget_text {
-        p {
-            margin-bottom: 10px;
-
-            &:last-child {
-                margin: 0;
-            }
-        }
     }
 
     &.widget_tag_cloud {
@@ -119,6 +86,7 @@
                 position: relative;
                 @include border-radius(18px);
                 @include transition;
+                @include md-shadow-1;
 
                 &:after {
                     width: 24px;
@@ -138,119 +106,24 @@
                 &:hover {
                     background-color: $gray-light;
                     text-decoration: none;
-                    @include box-shadow(0 2px 5px rgba($gray-base, 0.3));
+                    @include md-shadow-4;
 
                     &:after {
                         background-color: $gray-light;
-                        border-color: $brand-danger;
+                        border-color: $gray-darker;
                     }
                 }
 
                 &:focus {
                     background-color: $gray-light;
                     text-decoration: none;
-                    @include box-shadow(0 2px 5px rgba($gray-base, 0.3));
+                    @include md-shadow-2;
 
                     &:after {
                         background-color: $gray-light;
-                        border-color: $brand-danger;
+                        border-color: $gray-darker;
                     }
                 }
-            }
-        }
-    }
-
-    &.widget_calendar {
-        table {
-            width: 100%;
-            font-size: 14px;
-            line-height: 26px;
-            text-align: center;
-
-            caption {
-                color: $gray-darker;
-                text-align: center;
-            }
-
-            tbody {
-                border: 1px solid $gray-light;
-            }
-
-            td {
-                border: 1px solid $gray-light;
-                border-collapse: collapse;
-            }
-
-            th {
-                background-color: $gray-darker;
-                color: $white;
-                border: 1px solid $gray-darker;
-                border-collapse: collapse;
-                text-align: center;
-            }
-
-            a {
-                background-color: $brand-danger;
-                color: $white;
-                display: block;
-                text-decoration: none;
-
-                &:hover {
-                    background-color: $brand-danger2;
-                }
-            }
-        }
-    }
-
-    &.widget_ztjalali_calendar {
-        @extend .widget_calendar;
-    }
-
-    &.widget_pages {}
-
-    &.widget_rss {
-        ul {
-            li {
-                margin-bottom: 10px;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-
-            .rsswidget {
-                padding: 0;
-                background-color: transparent;
-                color: $brand-danger;
-                display: block;
-                font-size: 16px;
-                line-height: 24px;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-
-            .rss-date {
-                margin: 5px 0;
-                color: $gray;
-                display: block;
-                font-size: 12px;
-                line-height: 16px;
-            }
-
-            .rssSummary {
-                margin: 5px 0;
-                color: $gray-darker;
-                font-size: 14px;
-                line-height: 16px;
-            }
-
-            cite {
-                color: $gray;
-                display: block;
-                font-size: 12px;
-                line-height: 16px;
             }
         }
     }

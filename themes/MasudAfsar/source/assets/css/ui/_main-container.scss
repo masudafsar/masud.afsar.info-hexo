@@ -6,7 +6,7 @@
     #to-top {
         width: 55px;
         height: 55px;
-        background-color: $brand-danger;
+        background-color: $gray-base;
         color: $white;
         text-align: center;
         display: block;
@@ -16,10 +16,12 @@
         z-index: 9999;
         opacity: 0;
         cursor: pointer;
-        @include transition(400ms opacity ease);
+        @include md-shadow-1;
+        @include transition;
         
         &:hover {
-            background-color: $brand-danger2;
+            @include md-shadow-3;
+            background-color: $brand-danger;
         }
         
         i {

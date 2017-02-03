@@ -4,6 +4,7 @@
     border: none;
     @include border-radius(0);
     @include transition();
+    @include md-shadow-2;
 
     @include MQ(md) {
         min-height: 100px;
@@ -17,7 +18,7 @@
         height: 50px;
         padding: 5px 25px;
         color: $white;
-        background-color: $brand-danger;
+        background-color: $gray-base;
         line-height: 40px;
         @include transition();
 
@@ -28,7 +29,7 @@
         }
 
         &:hover {
-            background-color: $brand-danger2;
+            background-color: $brand-danger;
         }
 
         img {
@@ -188,7 +189,7 @@
 
             .icon-bar {
                 &:nth-last-of-type(1) {
-                    transform: rotate(0);
+                    transform: rotate(0deg);
                 }
 
                 &:nth-last-of-type(2) {
@@ -196,7 +197,7 @@
                 }
 
                 &:nth-last-of-type(3) {
-                    transform: rotate(0);
+                    transform: rotate(0deg);
                 }
             }
         }
@@ -316,7 +317,6 @@
     &.navbar-small {
         @include MQ(sm){
             min-height: 50px;
-            opacity: 0.9;
         }
 
         &:hover {

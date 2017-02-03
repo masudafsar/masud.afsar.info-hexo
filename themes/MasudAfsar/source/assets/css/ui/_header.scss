@@ -5,7 +5,7 @@
 #site-title {
     padding: 65px 15px 15px;
     background-color: $white;
-    @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+    @include md-shadow-1;
 
     @include MQ(md) {
         padding-top: 115px;
