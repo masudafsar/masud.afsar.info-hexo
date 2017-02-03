@@ -8,21 +8,21 @@ if (is_archive()) {
     }
 %>
 <%-
-    partial('parts/sections/archive-header', {
+    partial('parts/section/archive-header', {
         archiveType: __('Archive'),
         archiveTitle: arcTitle
     })
 %>
 <% } else if (is_category()) { %>
 <%-
-    partial('parts/sections/archive-header', {
+    partial('parts/section/archive-header', {
         archiveType: __('Category'),
         archiveTitle: page.category
     })
 %>
 <% } else if (is_tag()) { %>
 <%-
-    partial('parts/sections/archive-header', {
+    partial('parts/section/archive-header', {
         archiveType: __('Tag'),
         archiveTitle: page.tag
     })
@@ -39,7 +39,7 @@ if (is_archive()) {
 <!--/.section-articles -->
 <% } else { %>
 <%-
-    partial('parts/sections/archive-header', {
+    partial('parts/section/archive-header', {
         archiveType: "",
         archiveTitle: __("Not found any post!")
     })
