@@ -1,0 +1,78 @@
+<!-- #post-<%= post._id %> -->
+<article class="post-card <%- post.has_thumb ? 'has-post-thumbnail' : '' %>"
+         id="post-<%= post._id %>"
+         itemprop="blogPost"
+         itemscope="itemscope"
+         itemtype="http://schema.org/BlogPosting">
+
+    <div class="card-body">
+
+        <% if (post.has_thumb) { %>
+        <header class="card-header" itemprop="image">
+            <a href="<%- post.permalink %>" title="<%= post.title %>">
+                <img src="/<%= post.path %>thumb.png"
+                     alt="<%= post.title %>"
+                     class="card-image">
+
+                <span class="card-icon">
+                    <i class="fa fa-<%- post.icon === undefined ? 'pencil' : post.icon %>"></i>
+                </span>
+            </a>
+        </header>
+        <% } %>
+
+        <div class="card-content">
+            <h3 class="card-title" itemprop="headline">
+                <a href="<%- post.permalink %>" title="<%= post.title %>">
+                    <%= post.title %>&nbsp;
+                </a>
+            </h3>
+
+            <div class="card-text" itemprop="text">
+                <%- post.excerpt %>
+            </div>
+
+            <a href="<%- post.permalink %>" title="<%= post.title %>">ادامه</a>
+        </div>
+
+        <footer class="card-footer">
+            <ul class="post-meta">
+                <li class="post-date">
+                    <i class="fa fa-calendar"></i>
+                    <time datetime="<%- post.date %>" itemprop="datePublished">
+                        <%- moment(post.date).locale('fa').fromNow() %>
+                        <%- __('at') %>
+                        <%- moment(post.date).locale('fa').format('dddd Do MMM, YYYY') %>
+                    </time>
+                </li>
+
+                <% if (post.categories.length > 0) { %>
+                <li class="post-categories">
+                    <i class="fa fa-folder"></i>
+                    <%- list_categories(post.categories, {
+                        show_count: false,
+                        class: 'post-category',
+                        style: 'none',
+                        separator: ', '
+                    }) %>
+                </li>
+                <% } %>
+
+                <% if (post.tags.length > 0) { %>
+                <li class="post-categories">
+                    <i class="fa fa-tag"></i>
+                    <%- list_tags(post.tags, {
+                        show_count: false,
+                        class: 'post-category',
+                        style: 'none',
+                        separator: ', '
+                    }) %>
+                </li>
+                <% } %>
+            </ul>
+        </footer>
+
+    </div>
+
+</article>
+<!--/#post-<%= post._id %> -->

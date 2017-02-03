@@ -33,7 +33,7 @@ if (is_archive()) {
 <section class="section-articles">
     <% page.posts.each (function (post, i) { %>
     
-    <%- partial('parts/post-archive', {post: post, i: i}) %>
+    <%- partial('parts/post/card', {post: post, i: i}) %>
     <% }) %>
 </section>
 <!--/.section-articles -->
