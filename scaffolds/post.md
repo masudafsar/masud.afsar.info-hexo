@@ -6,4 +6,5 @@ date: {{ date }}
 tags:
 categories:
 type: blog
+color: red
 ---

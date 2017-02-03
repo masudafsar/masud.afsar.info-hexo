@@ -1,5 +1,5 @@
 <!-- #post-<%= post._id %> -->
-<article class="post-card <%- post.has_thumb ? 'has-post-thumbnail' : '' %>"
+<article class="post-card <%- post.has_thumb ? 'card-with-image' : '' %> <%- post.color ? post.color : '' %>"
          id="post-<%= post._id %>"
          itemprop="blogPost"
          itemscope="itemscope"
@@ -7,36 +7,28 @@
 
     <div class="card-body">
 
-        <% if (post.has_thumb) { %>
         <header class="card-header" itemprop="image">
-            <a href="<%- post.permalink %>" title="<%= post.title %>">
-                <img src="/<%= post.path %>thumb.png"
-                     alt="<%= post.title %>"
-                     class="card-image">
-
-                <span class="card-icon">
-                    <i class="fa fa-<%- post.icon === undefined ? 'pencil' : post.icon %>"></i>
-                </span>
-            </a>
-        </header>
-        <% } %>
-
-        <div class="card-content">
             <h3 class="card-title" itemprop="headline">
                 <a href="<%- post.permalink %>" title="<%= post.title %>">
                     <%= post.title %>&nbsp;
                 </a>
             </h3>
 
-            <div class="card-text" itemprop="text">
-                <%- post.excerpt %>
-            </div>
+            <span class="card-icon">
+                <i class="fa fa-<%- post.icon === undefined ? 'pencil' : post.icon %>"></i>
+            </span>
 
-            <a href="<%- post.permalink %>" title="<%= post.title %>">ادامه</a>
-        </div>
+            <% if (post.has_thumb) { %>
+            <a href="<%- post.permalink %>" title="<%= post.title %>">
+                <img src="/<%= post.path %>thumb.png"
+                     alt="<%= post.title %>"
+                     class="card-image">
+            </a>
+            <% } %>
+        </header>
 
         <footer class="card-footer">
-            <ul class="post-meta">
+            <ul class="card-meta">
                 <li class="post-date">
                     <i class="fa fa-calendar"></i>
                     <time datetime="<%- post.date %>" itemprop="datePublished">
@@ -70,6 +62,12 @@
                 </li>
                 <% } %>
             </ul>
+
+            <div class="card-text" itemprop="text">
+                <%- post.excerpt %>
+            </div>
+
+            <a href="<%- post.permalink %>" title="<%= post.title %>" class="card-btn"><%- __("Read more") %></a>
         </footer>
 
     </div>
