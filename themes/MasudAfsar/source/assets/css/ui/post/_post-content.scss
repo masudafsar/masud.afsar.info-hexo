@@ -1,0 +1,31 @@
+p {
+  color: $gray-base;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+pre {
+  color: $gray-darker;
+  background-color: $gray-lighter;
+  border-color: $gray;
+}
+
+hr {
+  border-color: $gray;
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: $gray-lighter;
+  color: $gray-base;
+  border-right: 5px solid $gray-light;
+  font-size: 14px;
+  line-height: 24px;
+
+  p {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

@@ -1,116 +1,125 @@
 #wraper {
-    .section-header {
-        margin: 20px 0;
-        padding: 20px;
-        background-color: $white;
-        @include border-radius(4px);
-        @include md-shadow-1;
+  .section-header {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: $white;
+    @include border-radius(4px);
+    @include md-shadow-1;
 
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0;
-            color: $gray-darker;
-            text-align: center;
-            font-size: 28px;
-            line-height: 48px;
-            font-weight: 400;
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      color: $gray-darker;
+      text-align: center;
+      font-size: 28px;
+      line-height: 48px;
+      font-weight: 400;
 
-            small {
-                color: $gray-dark;
-                font-size: 16px;
-                line-height: 48px;
-                font-weight: 400;
-            }
-        }
-
-        p {
-            margin: 0;
-            color: $gray-darker;
-            text-align: center;
-            font-size: 14px;
-            line-height: 28px;
-
-            &.paged-num {
-                margin-top: 5px;
-                color: $gray-dark;
-                text-align: center;
-                font-size: 10px;
-                line-height: 18px;
-            }
-        }
+      small {
+        color: $gray-dark;
+        font-size: 16px;
+        line-height: 48px;
+        font-weight: 400;
+      }
     }
 
-    .section-footer {
-        margin: 20px 0;
-        padding: 20px;
-        background-color: $white;
-        @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
-    }
+    p {
+      margin: 0;
+      color: $gray-darker;
+      text-align: center;
+      font-size: 14px;
+      line-height: 28px;
 
-    .section-articles {
-        @import "post/page-single.scss";
-        @import "post/post-card";
-        @import "post/post-single.scss";
-        @import "post/author-box.scss";
-        @import "post/comments.scss";
-        @import "post/error404.scss";
-    }
-
-    .archive-pagination {
+      &.paged-num {
+        margin-top: 5px;
+        color: $gray-dark;
         text-align: center;
-
-        .pagination {
-            margin: 0;
-
-            li {
-
-                a {
-                    background-color: transparent;
-                    color: $gray-base;
-
-                    &:hover {
-                        background-color: $gray-darker;
-                        color: $white;
-
-                        span {
-                            color: $white;
-                        }
-                    }
-                }
-
-                &.active {
-                    a {
-                        background-color: $gray-base;
-                        color: $white;
-                    }
-
-                    span.active {
-                        @extend a;
-                    }
-                }
-
-                &.disabled {
-                    a {
-                        background-color: transparent;
-                        color: $gray;
-                    }
-                }
-
-                &:first-child {
-                    a {
-                        @include border-radius(0);
-                    }
-
-                    span {
-                        @extend a;
-                    }
-                }
-
-                &:last-child {
-                    @extend :first-child;
-                }
-            }
-        }
+        font-size: 10px;
+        line-height: 18px;
+      }
     }
+  }
 
-    @import "elements/sidebar.scss";
+  .section-footer {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: $white;
+    @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+  }
+
+  .section-articles {
+    margin: 10px -10px;
+
+    @import "post/post-card";
+  }
+
+  .section-article {
+    @import "post/page-single.scss";
+    @import "post/post-single.scss";
+    @import "post/error404.scss";
+  }
+
+  .archive-pagination {
+    text-align: center;
+
+    .pagination {
+      margin: 0;
+
+      li {
+
+        a {
+          background-color: transparent;
+          color: $gray-base;
+
+          &:hover {
+            background-color: $gray-darker;
+            color: $white;
+
+            span {
+              color: $white;
+            }
+          }
+        }
+
+        &.active {
+          a {
+            background-color: $gray-base;
+            color: $white;
+          }
+
+          span.active {
+            @extend a;
+          }
+        }
+
+        &.disabled {
+          a {
+            background-color: transparent;
+            color: $gray;
+          }
+        }
+
+        &:first-child {
+          a {
+            @include border-radius(0);
+          }
+
+          span {
+            @extend a;
+          }
+        }
+
+        &:last-child {
+          a {
+            @include border-radius(0);
+          }
+
+          span {
+            @extend a;
+          }
+        }
+      }
+    }
+  }
+
+  @import "elements/sidebar.scss";
 }

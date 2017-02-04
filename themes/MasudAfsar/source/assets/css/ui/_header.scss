@@ -3,36 +3,36 @@
 }
 
 #site-title {
-    padding: 65px 15px 15px;
-    background-color: $white;
-    @include md-shadow-1;
+  padding: 65px 15px 15px;
+  background-color: $white;
+  @include md-shadow-1;
 
-    @include MQ(md) {
-        padding-top: 115px;
+  @include MQ(md) {
+    padding-top: 115px;
+  }
+
+  .logo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-image: url('../img/logo.svg');
+    background-size: 90%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+
+  .adv-hr {
+    font-size: 18px;
+    line-height: 24px;
+
+    span {
+      font-size: 18px;
+      line-height: 24px;
+      color: $gray-base;
     }
-
-    .logo {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        background-image: url('../img/logo.svg');
-        background-size: 90%;
-        background-position: center center;
-        background-repeat: no-repeat;
-        text-indent: -9999px;
-        overflow: hidden;
-    }
-
-    .adv-hr {
-        font-size: 18px;
-        line-height: 24px;
-
-        span {
-            font-size: 18px;
-            line-height: 24px;
-            color: $gray-base;
-        }
-    }
+  }
 }
 
 @import "primary-nav.scss";

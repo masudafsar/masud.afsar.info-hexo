@@ -3,6 +3,7 @@ title: سلام بر هگزو!
 date: 2017-01-01 11:08:52
 icon: rocket
 has_thumb: true
+has_full_thumb: true
 tags:
  - NodeJs
  - Git
@@ -10,6 +11,7 @@ categories:
  - تجربه‌ی جدید
 type: blog
 color: blue
+src:
 ---
 بالاخره بعد از مدت‌ها یه فریم‌ورک ساده و عالی برای ساخت بلاگ پیدا کردم!
 

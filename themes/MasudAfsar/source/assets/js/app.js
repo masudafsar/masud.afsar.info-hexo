@@ -5,6 +5,8 @@ var $PrimaryNavSearchFrom = $($PrimaryNavSearchBtn.data('target'));
 var $PrimaryNavSearchInput = $PrimaryNavSearchFrom.find('input[name="s"]');
 var $ToTopButton = $("#to-top");
 
+var $ArticlesContainer = $("#wraper .section-articles");
+
 $(function () {
     //-- navbar smalling by scrolling
     $(window).scroll(function () {
@@ -34,6 +36,12 @@ $(function () {
         $PrimaryNavSearchFrom.removeClass("show");
         $PrimaryNavSearchInput.val("");
         $PrimaryNavSearchInput.focusout();
+    });
+
+    //--
+    $ArticlesContainer.masonry({
+        itemSelector: '.post-card',
+        //gutter: 20,
     });
 });
 

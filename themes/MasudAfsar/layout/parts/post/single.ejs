@@ -1,4 +1,4 @@
-<section class="section-articles">
+<section class="section-article">
     <span itemscope="" itemtype="http://schema.org/Article">
         <meta itemprop="name" content="<%- post.title %>">
         <meta itemprop="url" content="<%- post.permalink %>">
@@ -10,66 +10,82 @@
         <meta itemprop="datePublished" content="<%- moment(post.date).format() %>">
     </span>
 
-    <article class="post-single post"
+    <article class="post-card <%- post.has_full_thumb ? 'card-with-image' : '' %> <%- post.color ? post.color : '' %>"
              id="post-<%- post._id %>"
              itemscope="itemscope"
              itemtype="http://schema.org/BlogPosting"
              itemprop="blogPost">
 
-        <header class="post-header">
-            <h3 class="post-title" itemprop="headline">
-                <span class="post-format">
+        <div class="card-body">
+
+            <header class="card-header" itemprop="image">
+                <h3 class="card-title" itemprop="headline"><%= post.title %>&nbsp;</h3>
+
+                <span class="card-icon">
                     <i class="fa fa-<%- post.icon === undefined ? 'pencil' : post.icon %>"></i>
                 </span>
-                <%= post.title %>&nbsp;
-            </h3>
-        </header>
 
-        <div class="post-body">
+                <% if (post.has_full_thumb) { %>
+                <img src="/<%= post.path %>thumb-full.png"
+                     alt="<%= post.title %>"
+                     class="card-image">
+                <% } %>
+            </header>
 
-            <div itemprop="text">
+            <div class="card-text" itemprop="text">
                 <%- post.content %>
+
+                <% if (post.src !== undefined && post.src !== null && post.src.length != 0) { %>
+                <div class="sources">
+                    <h6><%- __("Article sources") %></h6>
+                    <ul>
+                        <% for(var srcObj in post.src) { %>
+                        <% for(var srcTitle in post.src[srcObj]) { %>
+                        <li><a href="<%- post.src[srcObj][srcTitle] %>" title="<%- srcTitle %>"><%- srcTitle %></a></li>
+                        <% } %>
+                        <% } %>
+                    </ul>
+                </div>
+                <% } %>
             </div>
 
+            <footer class="card-footer">
+                <ul class="card-meta">
+                    <li class="post-date">
+                        <i class="fa fa-calendar"></i>
+                        <time datetime="<%- post.date %>" itemprop="datePublished">
+                            <%- moment(post.date).locale('fa').fromNow() %>
+                            <%- __('at') %>
+                            <%- moment(post.date).locale('fa').format('dddd Do MMM, YYYY') %>
+                        </time>
+                    </li>
+
+                    <% if (post.categories.length > 0) { %>
+                    <li class="post-categories">
+                        <i class="fa fa-folder"></i>
+                        <%- list_categories(post.categories, {
+                            show_count: false,
+                            class: 'post-category',
+                            style: 'none',
+                            separator: ', '
+                        }) %>
+                    </li>
+                    <% } %>
+
+                    <% if (post.tags.length > 0) { %>
+                    <li class="post-categories">
+                        <i class="fa fa-tag"></i>
+                        <%- list_tags(post.tags, {
+                            show_count: false,
+                            class: 'post-category',
+                            style: 'none',
+                            separator: ', '
+                        }) %>
+                    </li>
+                    <% } %>
+                </ul>
+            </footer>
+
         </div>
-
-        <footer class="post-footer">
-            <ul class="post-meta">
-                <li class="post-date">
-                    <i class="fa fa-calendar"></i>
-                    <time datetime="<%- post.date %>" itemprop="datePublished">
-                        <%- moment(post.date).locale('fa').fromNow() %>
-                        <%- __('at') %>
-                        <%- moment(post.date).locale('fa').format('dddd Do MMM, YYYY') %>
-                    </time>
-                </li>
-
-                <% if (post.categories.length > 0) { %>
-                <li class="post-categories">
-                    <i class="fa fa-folder"></i>
-                    <%- list_categories(post.categories, {
-                        show_count: false,
-                        class: 'post-category',
-                        style: 'none',
-                        separator: ', '
-                    }) %>
-                </li>
-                <% } %>
-
-                <% if (post.tags.length > 0) { %>
-                <li class="post-categories">
-                    <i class="fa fa-tag"></i>
-                    <%- list_tags(post.tags, {
-                        show_count: false,
-                        class: 'post-category',
-                        style: 'none',
-                        separator: ', '
-                    }) %>
-                </li>
-                <% } %>
-            </ul>
-        </footer>
-
     </article>
-
 </section>

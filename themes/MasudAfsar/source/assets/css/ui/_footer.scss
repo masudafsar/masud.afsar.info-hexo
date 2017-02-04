@@ -1,35 +1,37 @@
 #footer {
-    background-color: $white;
-    @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 9990;
+  background-color: $white;
+  @include md-shadow-2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9990;
 
-    .primary {
-        padding: 20px;
-        color: $gray-darker;
-        text-align: center;
-        font-size: 12px;
-        line-height: 24px;
-    }
+  .primary {
+    padding: 20px;
+    color: $gray-darker;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+  }
 
-    .secondary {
-        padding: 20px;
-        background-color: $gray-lighter;
-        color: $gray-darker;
-        border-top: 1px solid $gray;
-        text-align: center;
-        font-size: 12px;
-        line-height: 34px;
-    }
+  .secondary {
+    padding: 20px;
+    background-color: $gray-lighter;
+    color: $gray-darker;
+    border-top: 1px solid $gray;
+    text-align: center;
+    font-size: 12px;
+    line-height: 34px;
+  }
 
-    .fa-heart {
-        color: $brand-danger;
-    }
+  .fa-heart {
+    color: $brand-danger;
+  }
 
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 24px;
+  }
 }

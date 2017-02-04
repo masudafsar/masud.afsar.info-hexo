@@ -1,237 +1,219 @@
-.post-single {
-    margin: 20px 0;
+.post-card {
+  margin: 20px 0;
+
+  .card-body {
     background-color: $white;
+    overflow: hidden;
+    border-bottom: 3px solid $brand-danger;
+    @include md-shadow-2;
+    @include border-radius(4px);
+    @include transition;
+  }
+
+  .card-header {
     position: relative;
-    @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
 
-    .post-header {
-        padding: 20px 75px 20px 20px;
-        background-color: $gray-lighter;
-        border-bottom: 1px solid $gray;
-        position: relative;
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      background-color: $brand-danger;
+      text-align: center;
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      @include border-radius(50%);
+      @include transition;
+      @include md-shadow-1;
+
+      i {
+        color: $white;
+        font-size: 20px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  .card-text {
+    padding: 0 30px 20px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .card-footer {
+    padding: 20px;
+    border-top: 1px solid $gray-light;
+  }
+
+  .card-image {
+    width: 100%;
+  }
+
+  .card-title {
+    margin: 0;
+    padding: 20px 20px 20px 76px;
+    font-size: 24px;
+    line-height: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-btn {
+    padding: 5px 15px;
+    color: $gray-base;
+    @include border-radius(4px);
+    @include transition;
+
+    &:hover {
+      background-color: $gray-light;
+      text-decoration: none;
+      @include md-shadow-4;
+    }
+  }
+
+  .card-meta {
+    margin: 0;
+    padding: 0;
+    color: $gray-dark;
+    font-size: 12px;
+    line-height: 20px;
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      @include MQ(sm) {
+        padding: 0 10px;
+      }
     }
 
-    .post-body {
-        padding: 30px;
+    i {
+      padding-left: 5px;
+      color: $brand-danger;
+    }
+  }
 
-        @import "wisiwyg-editor.scss";
+  &.card-with-image {
+    .card-text {
+      padding-top: 20px;
+    }
+  }
+
+  &.blue {
+    .card-body {
+      border-color: $brand-primary;
     }
 
-    .post-footer {
-        padding: 20px;
-        background-color: $gray-lighter;
-        color: $gray-dark;
-        border-top: 1px solid $gray;
-        position: relative;
+    .card-title a:hover {
+      color: $brand-primary;
     }
 
-    .post-title {
-        margin: 0;
-        font-size: 24px;
-        line-height: 36px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-        a {
-            color: $gray-base;
-
-            &:hover {
-                color: $brand-danger;
-                text-decoration: none;
-            }
-        }
+    .card-meta i {
+      color: $brand-primary;
     }
 
-    .post-format {
-        width: 54px;
-        height: 54px;
-        background-color: $brand-danger;
-        text-align: center;
-        position: absolute;
-        top: 11px;
-        bottom: 11px;
-        right: 11px;
-        @include border-radius(50%);
-        @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
+    .card-icon {
+      background-color: $brand-primary;
+    }
+  }
 
-        i {
-            color: $gray-lighter;
-            font-size: 32px;
-            line-height: 54px;
-        }
+  &.aqua {
+    .card-body {
+      border-color: $brand-info;
     }
 
-    .post-meta {
-        margin: 0;
-        padding: 0;
-        color: $gray-dark;
-        font-size: 12px;
-        line-height: 20px;
-        list-style: none;
-
-        li {
-            display: inline-block;
-
-            @include MQ(sm) {
-                padding: 0 10px;
-            }
-        }
+    .card-title a:hover {
+      color: $brand-info;
     }
 
-    .post-level {
-        &.level-1 i {
-            color: $brand-success;
-        }
-
-        &.level-2 i {
-            color: $brand-warning;
-        }
-
-        &.level-3 i {
-            color: $brand-danger;
-        }
+    .card-meta i {
+      color: $brand-info;
     }
 
-    .prerequisites {
-        max-width: 65%;
-        padding: 15px;
-        margin-left: 20px;
-        margin-bottom: 20px;
-        display: inline-block;
-        float: right;
-        color: $gray-darker;
-        background-color: $gray-lighter;
-        border: 1px solid $gray;
-        @include border-radius(4px);
-        font-size: 13px;
+    .card-icon {
+      background-color: $brand-info;
+    }
+  }
 
-        p {
-            color: $gray-darker;
-            font-size: 13px;
-        }
-
-        ul {
-            margin: 0;
-        }
+  &.red {
+    .card-body {
+      border-color: $brand-danger;
     }
 
-    .sources {
-        padding: 10px 15px 0;
-        margin-top: 10px;
-        //margin-bottom: 10px;
-        color: $gray-darker;
-        border-top: 1px solid $gray;
-        font-size: 13px;
-
-        ul {
-            padding: 0;
-            margin: 0;
-            display: inline;
-        }
-
-        li {
-            display: inline-block;
-            text-decoration: none;
-
-            &:last-child {
-                span {
-                    display: none;
-                }
-            }
-        }
+    .card-title a:hover {
+      color: $brand-danger;
     }
 
-    .sd-social {
-        ul {
-            margin: 0;
-        }
-    }
-}
-
-#post-nav {
-    .next-post {
-        height: 100px;
-        padding: 20px;
-        padding-right: 50px;
-        margin-bottom: 20px;
-        background-color: $white;
-        color: $gray-darker;
-        display: block;
-        position: relative;
-        overflow: hidden;
-        @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
-        @include transition(200ms all ease);
-
-        &:hover {
-            background-color: $gray-lighter;
-            text-decoration: none;
-
-            .fa {
-                background-color: $brand-danger;
-                color: $white;
-            }
-        }
-
-        &.has-thumb {
-            padding-left: 100px;
-        }
-
-        .fa {
-            width: 40px;
-            background-color: $gray-lighter;
-            color: $gray-dark;
-            border-left: 1px solid $gray;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            line-height: 100px;
-            text-align: center;
-            @include transition(200ms all ease);
-        }
-
-        .thumb {
-            width: 80px;
-            height: 80px;
-            background-color: $white;
-            position: absolute;
-            top: 10px;
-            bottom: 10px;
-            left: 10px;
-            @include box-shadow(0 2px 10px rgba($gray-base, 0.3));
-        }
-
-        .title {
-            margin: 0;
-            line-height: 60px;
-            font-size: 18px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+    .card-meta i {
+      color: $brand-danger;
     }
 
-    .prev-post {
-        @extend .next-post;
-        padding-right: 20px;
-        padding-left: 50px;
-
-        &.has-thumb {
-            padding-left: 50px;
-            padding-right: 100px;
-        }
-
-        .fa {
-            border-left: none;
-            border-right: 1px solid $gray;
-            right: auto;
-            left: 0;
-        }
-
-        .thumb {
-            left: auto;
-            right: 10px;
-        }
+    .card-icon {
+      background-color: $brand-danger;
     }
+  }
+
+  &.green {
+    .card-body {
+      border-color: $brand-success;
+    }
+
+    .card-title a:hover {
+      color: $brand-success;
+    }
+
+    .card-meta i {
+      color: $brand-success;
+    }
+
+    .card-icon {
+      background-color: $brand-success;
+    }
+  }
+
+  &.yellow {
+    .card-body {
+      border-color: $brand-warning;
+    }
+
+    .card-title a:hover {
+      color: $brand-warning;
+    }
+
+    .card-meta i {
+      color: $brand-warning;
+    }
+
+    .card-icon {
+      background-color: $brand-warning;
+    }
+  }
+
+  .sources {
+    padding: 10px 15px 0;
+    margin-top: 10px;
+    //margin-bottom: 10px;
+    color: $gray-darker;
+    border-top: 1px solid $gray;
+    font-size: 13px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      display: inline;
+    }
+
+    li {
+      display: inline-block;
+      text-decoration: none;
+
+      &:last-child {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
 }
