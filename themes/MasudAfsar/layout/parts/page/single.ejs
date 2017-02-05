@@ -1,24 +1,30 @@
-<section class="section-articles">
-
-    <article class="page-single"
-             id="page-<%- page._id %>"
+<section class="section-article">
+    <article class="page-card <%- page.color ? page.color : '' %>"
+             id="post-<%- page._id %>"
              itemscope="itemscope"
              itemtype="http://schema.org/BlogPosting"
              itemprop="blogPost">
 
-        <header class="page-header">
-            <h3 class="page-title" itemprop="headline">
-                <span class="page-icon">
+        <div class="card-body">
+
+            <header class="card-header" itemprop="image">
+                <h3 class="card-title" itemprop="headline"><%= page.title %>&nbsp;</h3>
+
+                <span class="card-icon">
                     <i class="fa fa-<%- page.icon === undefined ? 'file-text-o' : page.icon %>"></i>
                 </span>
-                <%= page.title %>&nbsp;
-            </h3>
-        </header>
 
-        <div class="page-body" itemprop="text">
-            <%- page.content %>
+                <% if (page.has_full_thumb) { %>
+                <img src="/<%= page.path %>thumb-full.png"
+                     alt="<%= page.title %>"
+                     class="card-image">
+                <% } %>
+            </header>
+
+            <div class="card-text" itemprop="text">
+                <%- page.content %>
+            </div>
+
         </div>
-
     </article>
-
 </section>

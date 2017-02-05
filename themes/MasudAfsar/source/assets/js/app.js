@@ -41,7 +41,7 @@ $(function () {
     //--
     $ArticlesContainer.masonry({
         itemSelector: '.post-card',
-        //gutter: 20,
+        originLeft: false,
     });
 });
 

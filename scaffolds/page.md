@@ -1,5 +1,7 @@
 ---
 title: {{ title }}
-icon: file-text-o
 date: {{ date }}
+icon: file-text-o
+color: red
+has_full_thumb: false
 ---

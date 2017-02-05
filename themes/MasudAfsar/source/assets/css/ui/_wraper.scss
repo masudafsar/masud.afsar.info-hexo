@@ -53,9 +53,9 @@
   }
 
   .section-article {
-    @import "post/page-single.scss";
-    @import "post/post-single.scss";
-    @import "post/error404.scss";
+    @import "post/page-single";
+    @import "post/post-single";
+    @import "post/error404";
   }
 
   .archive-pagination {
