@@ -2,7 +2,7 @@
 title: درباره من
 icon: user
 color: red
-has_full_thumb: true
+has_full_thumb: false
 date: 2017-02-13 18:47:17
 ---
 
