@@ -78,6 +78,12 @@ deploy:
 sitemap:
   path: sitemap.xml
 
+# hexo-githubEmojis
+githubEmojis:
+  enable: true
+  className: github-emoji
+  unicode: false
+
 # hexo-autonofollow
 nofollow:
   enable: true
