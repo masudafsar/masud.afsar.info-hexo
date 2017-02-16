@@ -5,10 +5,10 @@ icon: rocket
 has_thumb: true
 has_full_thumb: true
 tags:
- - NodeJs
- - Git
+    - NodeJs
+    - Git
 categories:
- - تجربه‌ی جدید
+    - تجربه‌ی جدید
 type: blog
 color: blue
 src:
