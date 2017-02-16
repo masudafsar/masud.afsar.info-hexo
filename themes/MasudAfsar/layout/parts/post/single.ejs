@@ -41,7 +41,10 @@
                     <ul>
                         <% for(var srcObj in post.src) { %>
                         <% for(var srcTitle in post.src[srcObj]) { %>
-                        <li><a href="<%- post.src[srcObj][srcTitle] %>" title="<%- srcTitle %>"><%- srcTitle %></a></li>
+                        <li>
+                            <a href="<%- post.src[srcObj][srcTitle] %>" title="<%- srcTitle %>"><%- srcTitle %></a>
+                            <span>،</span>
+                        </li>
                         <% } %>
                         <% } %>
                     </ul>
