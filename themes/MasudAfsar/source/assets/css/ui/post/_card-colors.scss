@@ -1,0 +1,149 @@
+&.blue {
+  .card-body {
+    border-color: $bluejeans-dark;
+  }
+  .card-title a:hover {
+    color: $bluejeans-dark;
+  }
+  .card-meta i {
+    color: $bluejeans-dark;
+  }
+  .card-icon {
+    background-color: $bluejeans-dark;
+  }
+}
+
+&.aqua {
+  .card-body {
+    border-color: $aqua-dark;
+  }
+  .card-title a:hover {
+    color: $aqua-dark;
+  }
+  .card-meta i {
+    color: $aqua-dark;
+  }
+  .card-icon {
+    background-color: $aqua-dark;
+  }
+}
+
+&.green {
+  .card-body {
+    border-color: $mint-dark;
+  }
+  .card-title a:hover {
+    color: $mint-dark;
+  }
+  .card-meta i {
+    color: $mint-dark;
+  }
+  .card-icon {
+    background-color: $mint-dark;
+  }
+}
+
+&.grass {
+  .card-body {
+    border-color: $grass-dark;
+  }
+  .card-title a:hover {
+    color: $grass-dark;
+  }
+  .card-meta i {
+    color: $grass-dark;
+  }
+  .card-icon {
+    background-color: $grass-dark;
+  }
+}
+
+&.yellow {
+  .card-body {
+    border-color: $sunflower-dark;
+  }
+  .card-title a:hover {
+    color: $sunflower-dark;
+  }
+  .card-meta i {
+    color: $sunflower-dark;
+  }
+  .card-icon {
+    background-color: $sunflower-dark;
+  }
+}
+
+&.orange {
+  .card-body {
+    border-color: $bittersweet-dark;
+  }
+  .card-title a:hover {
+    color: $bittersweet-dark;
+  }
+  .card-meta i {
+    color: $bittersweet-dark;
+  }
+  .card-icon {
+    background-color: $bittersweet-dark;
+  }
+}
+
+&.red {
+  .card-body {
+    border-color: $grapefruit-dark;
+  }
+  .card-title a:hover {
+    color: $grapefruit-dark;
+  }
+  .card-meta i {
+    color: $grapefruit-dark;
+  }
+  .card-icon {
+    background-color: $grapefruit-dark;
+  }
+}
+
+&.purple {
+  .card-body {
+    border-color: $lavender-dark;
+  }
+  .card-title a:hover {
+    color: $lavender-dark;
+  }
+  .card-meta i {
+    color: $lavender-dark;
+  }
+  .card-icon {
+    background-color: $lavender-dark;
+  }
+}
+
+&.pink {
+  .card-body {
+    border-color: $pinkrose-dark;
+  }
+  .card-title a:hover {
+    color: $pinkrose-dark;
+  }
+  .card-meta i {
+    color: $pinkrose-dark;
+  }
+  .card-icon {
+    background-color: $pinkrose-dark;
+  }
+}
+
+&.dark {
+  .card-body {
+    border-color: $darkgray-dark;
+  }
+  .card-title a:hover {
+    color: $darkgray-dark;
+  }
+  .card-meta i {
+    color: $darkgray-dark;
+  }
+  .card-icon {
+    background-color: $darkgray-dark;
+  }
+}
