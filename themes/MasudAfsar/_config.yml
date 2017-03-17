@@ -1,5 +1,6 @@
 # Theme Info
-version: Version
+version_title: Version
+version_code: 0.0.3
 
 # Header
 rss: /atom.xml
