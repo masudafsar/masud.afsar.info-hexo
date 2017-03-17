@@ -91,4 +91,32 @@
 
         </div>
     </article>
+
+    <div class="post-card <%- post.color ? post.color : '' %>">
+        <div class="card-body">
+            <div class="card-header">
+                <h3 class="card-title" itemprop="headline"><%- __("Comments") %></h3>
+                <span class="card-icon">
+                    <i class="fa fa-comments"></i>
+                </span>
+            </div>
+            <div class="card-text">
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = "http://masud.afsar.info<%= post.permalink %>";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "<%= post._id %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://masudafsar.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 </section>
