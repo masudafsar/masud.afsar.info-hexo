@@ -1,0 +1,39 @@
+event-19900218:
+  title: تولد
+  img: false
+  icon: birthday-cake
+  date: 1990-02-18
+  color: grass
+  desc: در ۲۹ بهمن ۶۸ در شهر قزوین بدنیا اومدم.
+
+event-20061209:
+  title: اولین تجربه برنامه‌نویسی
+  img: true
+  icon: code
+  date: 2006-12-09
+  color: blue
+  desc: زبان QBasic اولین زبانی بود که تجربه کردم.
+
+event-20070114:
+  title: آشنایی با زبان C و ++C
+  img: true
+  icon: terminal
+  date: 2007-01-14
+  color: red
+  desc: تشکیل تیم روبوتیک دانش‌آموزی.
+
+event-20080922:
+  title: ورود به دانشگاه
+  img: true
+  icon: university
+  date: 2008-09-22
+  color: green
+  desc: در رشته مهندسی نرم‌افزار در دانشگاه آزاد قزوین وارد دانشگاه شدم.
+
+event-20090629:
+  title: طراحی وب
+  img: false
+  icon: wordpress
+  date: 2009-06-29
+  color: dark
+  desc: با یادگیری PHP و WordPress شروع به کار کردم و چندین سایت طراحی کردم و به صورت حرفه‌ای طراحی وب رو دنبال کردم.

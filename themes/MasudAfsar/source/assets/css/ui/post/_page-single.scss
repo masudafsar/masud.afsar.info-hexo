@@ -1,5 +1,5 @@
 .page-card {
-  margin: 20px 0;
+  margin: 20px 0 0;
 
   .card-body {
     background-color: $white;
@@ -16,7 +16,7 @@
     .card-icon {
       width: 40px;
       height: 40px;
-      background-color: $brand-danger;
+      background-color: $gray-base;
       text-align: center;
       position: absolute;
       top: 18px;

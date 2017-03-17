@@ -1,0 +1,57 @@
+.contact-map {
+  margin: 0 -30px 10px;
+  background-color: #f3f4f4;
+
+  #gmap {
+    height: 400px;
+  }
+}
+
+.contact-avatar {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  @include border-radius(75px);
+  @include md-shadow-3;
+  overflow: hidden;
+
+  img {
+    margin: 0 !important;
+  }
+}
+
+.contact-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  direction: ltr;
+
+  li {
+    padding: 5px 0;
+
+    .fa {
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      color: $white;
+      background-color: $gray-base;
+      font-size: 20px;
+      text-align: center;
+      line-height: 40px;
+      @include border-radius(20px);
+    }
+
+    span {
+      line-height: 40px;
+    }
+    
+    a {
+      @extend span;
+      color: $gray-base !important;
+      
+      &:hover {
+        color: $white !important;
+      }
+    }
+  }
+}

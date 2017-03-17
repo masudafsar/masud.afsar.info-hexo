@@ -1,0 +1,45 @@
+<section class="section-article">
+    <div class="page-card <%- page.color ? page.color : '' %>">
+
+        <div class="card-body">
+
+            <header class="card-header">
+                <h3 class="card-title"><%- __("Timeline") %></h3>
+
+                <span class="card-icon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </header>
+
+            <div class="card-text">
+                <ul class="timeline">
+                    <% for (var item in site.data.timeline) { %>
+                    <li class="timeline-event <%- site.data.timeline[item].color ? site.data.timeline[item].color : 'dark' %>"
+                        id="timeline-<%- item %>">
+
+                        <div class="timeline-event-body">
+                            <h4><%- site.data.timeline[item].title %></h4>
+
+                            <div class="timeline-event-icon">
+                                <% if (site.data.timeline[item].img) { %>
+                                <img src="/img/timeline/<%- item %>.png" alt="<%- site.data.timeline[item].title %>">
+                                <% } else { %>
+                                <i class="fa fa-<%- site.data.timeline[item].icon %>"></i>
+                                <% } %>
+                            </div>
+
+                            <time datetime="<%- site.data.timeline[item].date %>" itemprop="datePublished">
+                                <%- moment(site.data.timeline[item].date).locale('fa').format('dddd Do MMM, YYYY') %>
+                            </time>
+
+                            <p><%- site.data.timeline[item].desc %></p>
+                        </div>
+
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>

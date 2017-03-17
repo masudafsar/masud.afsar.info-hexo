@@ -3,6 +3,7 @@ title: درباره من
 icon: user
 color: dark
 has_full_thumb: false
+layout: page-about
 date: 2017-02-13 18:47:17
 ---
 

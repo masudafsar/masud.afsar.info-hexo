@@ -17,55 +17,6 @@
         </div>
         <% } %>
 
-        <% if (site.data.profile.socials !== undefined) { %>
-        <div class="about-social-links">
-
-            <% if (site.data.profile.socials.github !== undefined) { %>
-            <a class="link github"
-               href="<%= site.data.profile.socials.github %>"
-               title="پروفایل گیت‌هاب"
-               rel="nofollow">
-                <i class="fa fa-github-alt"></i>
-            </a>
-            <% } %>
-
-            <% if (site.data.profile.socials.facebook !== undefined) { %>
-            <a class="link facebook"
-               href="<%= site.data.profile.socials.facebook %>"
-               title="صفحه فیسبوک"
-               rel="nofollow">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <% } %>
-
-            <% if (site.data.profile.socials.twitter !== undefined) { %>
-            <a class="link twitter"
-               href="<%= site.data.profile.socials.twitter %>"
-               title="صفحه توییتر"
-               rel="nofollow">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <% } %>
-
-            <% if (site.data.profile.socials.googleplus !== undefined) { %>
-            <a class="link googleplus"
-               href="<%= site.data.profile.socials.googleplus %>"
-               title="صفحه گوگل‌پلاس"
-               rel="nofollow">
-                <i class="fa fa-google-plus"></i>
-            </a>
-            <% } %>
-
-            <% if (site.data.profile.socials.telegram !== undefined) { %>
-            <a class="link telegram"
-               href="<%= site.data.profile.socials.telegram %>"
-               title="تلگرام"
-               rel="nofollow">
-                <i class="fa fa-paper-plane"></i>
-            </a>
-            <% } %>
-
-        </div>
-        <% } %>
+        <%- partial('parts/section/social-links') %>
     </div>
 </aside>

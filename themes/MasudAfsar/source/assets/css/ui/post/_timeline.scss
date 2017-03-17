@@ -1,0 +1,184 @@
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  //position: relative;
+
+  .timeline-event {
+    margin: 0 80px 20px 0;
+    padding: 10px 20px;
+    border: 1px solid $gray-light;
+    position: relative;
+    @include border-radius(4px);
+    @include transition;
+
+    &:hover {
+      @include md-shadow-4;
+
+      img {
+        @include md-shadow-4;
+      }
+    }
+
+    &:after {
+      width: 40px;
+      border-top: 4px solid $gray;
+      position: absolute;
+      top: 23px;
+      right: -80px;
+      content: ' ';
+      z-index: 1;
+    }
+
+    &:before {
+      border-right: 4px solid $gray;
+      position: absolute;
+      top: 0;
+      bottom: -25px;
+      right: -80px;
+      content: ' ';
+      z-index: 2;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &:before {
+        height: 27px;
+        bottom: auto;
+      }
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .timeline-event-icon {
+      width: 50px;
+      height: 50px;
+      background-color: $gray-base;
+      position: absolute;
+      top: 0px;
+      right: -65px;
+      @include border-radius(50px);
+      @include transition;
+      z-index: 3;
+      overflow: hidden;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin: 0 !important;
+    }
+
+    .fa {
+      @extend img;
+      color: $white;
+      font-size: 20px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    time {
+      color: $gray-dark;
+      font-size: 12px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    &.blue {
+      h4 {
+        color: $bluejeans-dark;
+      }
+      .timeline-event-icon {
+        background-color: $bluejeans-dark;
+      }
+    }
+
+    &.aqua {
+      h4 {
+        color: $aqua-dark;
+      }
+      .timeline-event-icon {
+        background-color: $aqua-dark;
+      }
+    }
+
+    &.green {
+      h4 {
+        color: $mint-dark;
+      }
+      .timeline-event-icon {
+        background-color: $mint-dark;
+      }
+    }
+
+    &.grass {
+      h4 {
+        color: $grass-dark;
+      }
+      .timeline-event-icon {
+        background-color: $grass-dark;
+      }
+    }
+
+    &.yellow {
+      h4 {
+        color: $sunflower-dark;
+      }
+      .timeline-event-icon {
+        background-color: $sunflower-dark;
+      }
+    }
+
+    &.orange {
+      h4 {
+        color: $bittersweet-dark;
+      }
+      .timeline-event-icon {
+        background-color: $bittersweet-dark;
+      }
+    }
+
+    &.red {
+      h4 {
+        color: $grapefruit-dark;
+      }
+      .timeline-event-icon {
+        background-color: $grapefruit-dark;
+      }
+    }
+
+    &.purple {
+      h4 {
+        color: $lavender-dark;
+      }
+      .timeline-event-icon {
+        background-color: $lavender-dark;
+      }
+    }
+
+    &.pink {
+      h4 {
+        color: $pinkrose-dark;
+      }
+      .timeline-event-icon {
+        background-color: $pinkrose-dark;
+      }
+    }
+
+    &.dark {
+      h4 {
+        color: $darkgray-dark;
+      }
+      .timeline-event-icon {
+        background-color: $darkgray-dark;
+      }
+    }
+
+  }
+}
