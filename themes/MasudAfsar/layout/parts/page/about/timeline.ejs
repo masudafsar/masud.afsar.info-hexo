@@ -29,7 +29,7 @@
                             </div>
 
                             <time datetime="<%- site.data.timeline[item].date %>" itemprop="datePublished">
-                                <%- moment(site.data.timeline[item].date).locale('fa').format('dddd Do MMM, YYYY') %>
+                                <%- ToPersianDigit(jmoment(site.data.timeline[item].date).format('jMMMM jYYYY')) %>
                             </time>
 
                             <p><%- site.data.timeline[item].desc %></p>

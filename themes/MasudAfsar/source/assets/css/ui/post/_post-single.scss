@@ -87,6 +87,7 @@
     list-style: none;
 
     li {
+      white-space: nowrap;
       display: inline-block;
 
       @include MQ(sm) {

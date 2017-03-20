@@ -57,9 +57,9 @@
                     <li class="post-date">
                         <i class="fa fa-calendar"></i>
                         <time datetime="<%- post.date %>" itemprop="datePublished">
-                            <%- moment(post.date).locale('fa').fromNow() %>
+                            <%- ToPersianDigit(jmoment(post.date).fromNow()) %>
                             <%- __('at') %>
-                            <%- moment(post.date).locale('fa').format('dddd Do MMM, YYYY') %>
+                            <%- ToPersianDigit(jmoment(post.date).format('dddd jDo jMMMM, jYYYY')) %>
                         </time>
                     </li>
 
