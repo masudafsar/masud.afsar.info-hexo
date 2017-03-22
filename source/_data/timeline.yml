@@ -37,3 +37,19 @@ event-20090629:
   date: 2009-06-29
   color: dark
   desc: با یادگیری PHP و WordPress شروع به کار کردم و چندین سایت طراحی کردم و به صورت حرفه‌ای طراحی وب رو دنبال کردم.
+
+event-20150201:
+  title: همکاری با اردیبهشت‌استودیو
+  img: false
+  icon: gamepad
+  date: 2015-02-01
+  color: red
+  desc:
+
+event-20170220:
+  title: خدمت سربازی
+  img: true
+  icon: user
+  date: 2017-02-20
+  color: grass
+  desc: شروع دوره آموزشی سربازی
